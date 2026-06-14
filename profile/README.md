@@ -21,10 +21,10 @@
 
 <div align="center">
 
-![GitHub Org's stars](https://img.shields.io/github/stars/6-eyes-Game-studios?style=for-the-badge&logo=github&color=8A2BE2)
-![GitHub Org's followers](https://img.shields.io/github/followers/6-eyes-Game-studios?style=for-the-badge&logo=github&color=8A2BE2)
-![Last commit](https://img.shields.io/github/last-commit/6-eyes-Game-studios/Trios-734?style=for-the-badge&logo=git&color=FF4500)
-![Open issues](https://img.shields.io/github/issues/6-eyes-Game-studios/Trios-734?style=for-the-badge&logo=github&color=8A2BE2)
+![GitHub Org's stars](https://img.shields.io/github/stars/6-eyes-game-studios?style=for-the-badge&logo=github&color=8A2BE2)
+![GitHub Org's followers](https://img.shields.io/github/followers/6-eyes-game-studios?style=for-the-badge&logo=github&color=8A2BE2)
+![Last commit](https://img.shields.io/github/last-commit/6-eyes-game-studios/Trios-734?style=for-the-badge&logo=git&color=FF4500)
+![Open issues](https://img.shields.io/github/issues/6-eyes-game-studios/Trios-734?style=for-the-badge&logo=github&color=8A2BE2)
 
 </div>
 
