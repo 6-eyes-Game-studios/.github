@@ -17,7 +17,7 @@
 
 </div>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=6-eyes-Game-studios&theme=github-dark&hide_border=true&bg_color=0d1117&color=c9d1d9&line=8A2BE2&point=FF4500&area=true&area_color=8A2BE2&radius=8" width="100%" alt="Activity Graph">
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=6-eyes-game-studios&theme=github-dark&hide_border=true&bg_color=0d1117&color=c9d1d9&line=8A2BE2&point=FF4500&area=true&area_color=8A2BE2&radius=8" width="100%" alt="Activity Graph">
 
 <div align="center">
 
