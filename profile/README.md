@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://github.com/6-eyes-Game-studios">
+<a href="https://github.com/6-eyes-game-studios">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=2000&pause=500&color=8A2BE2&center=true&vCenter=true&repeat=false&random=false&width=800&height=60&lines=6+Eyes+Game+Studios&cursor=true" alt="6 Eyes Game Studios Title">
 </a>
 
@@ -71,9 +71,9 @@ You are **Evo** - a prototype with an open-ended genetic architecture. The only 
 
 | Repository | Description |
 |:-----------|:------------|
-| **[Trios-734](https://github.com/6-eyes-Game-studios/Trios-734)** | Main game code and assets |
-| **[Design-Document](https://github.com/6-eyes-Game-studios/design-document)** | Full game design specification |
-| **[Bestiarium](https://github.com/6-eyes-Game-studios/bestiarium)** | Creature and enemy database |
+| **[Trios-734](https://github.com/6-eyes-game-studios/Trios-734)** | Main game code and assets |
+| **[Design-Document](https://github.com/6-eyes-game-studios/design-document)** | Full game design specification |
+| **[Bestiarium](https://github.com/6-eyes-game-studios/bestiarium)** | Creature and enemy database |
 
 ---
 
@@ -115,7 +115,7 @@ This project is **100% open source** under **GPLv3**. We welcome contributors of
 | Platform | Link |
 |:---------|:-----|
 | 💬 **Discord** | [Join our community](https://discord.gg/GEyVXwjMuV) |
-| 🐙 **GitHub** | [@6-eyes-Game-studios](https://github.com/6-eyes-Game-studios) |
+| 🐙 **GitHub** | [@6-eyes-game-studios](https://github.com/6-eyes-game-studios) |
 | 📧 **Email** | ndstet@gmail.com |
 
 </div>
@@ -123,7 +123,7 @@ This project is **100% open source** under **GPLv3**. We welcome contributors of
 ---
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=6-eyes-Game-studios&label=👁️%20Studio%20Views&color=8A2BE2&style=flat&labelColor=0d1117" alt="Profile Views">
+  <img src="https://komarev.com/ghpvc/?username=6-eyes-game-studios&label=👁️%20Studio%20Views&color=8A2BE2&style=flat&labelColor=0d1117" alt="Profile Views">
 
   <br>
   
