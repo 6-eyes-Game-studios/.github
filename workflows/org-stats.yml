@@ -1,0 +1,94 @@
+name: Generate Organization Stats
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # каждый день в 00:00 UTC
+  workflow_dispatch:      # возможность запустить вручную
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: |
+        pip install requests matplotlib pandas
+        
+    - name: Generate activity graph
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        python - <<EOF
+        import requests, matplotlib.pyplot as plt, pandas as pd
+        from datetime import datetime, timedelta
+        import json
+        
+        org = "6-eyes-game-studios"
+        headers = {"Authorization": f"token {__import__('os').environ['GITHUB_TOKEN']}"} if __import__('os').environ.get('GITHUB_TOKEN') else {}
+        
+        # Получаем все репозитории организации
+        repos = []
+        page = 1
+        while True:
+            resp = requests.get(f"https://api.github.com/orgs/{org}/repos?per_page=100&page={page}", headers=headers)
+            if resp.status_code != 200:
+                break
+            batch = resp.json()
+            if not batch:
+                break
+            repos.extend(batch)
+            page += 1
+        
+        # Собираем события за последние 30 дней
+        end_date = datetime.now()
+        start_date = end_date - timedelta(days=30)
+        daily_counts = { (start_date + timedelta(days=i)).date(): 0 for i in range(31) }
+        
+        for repo in repos:
+            # Используем события push (коммиты) и issues
+            for event_type in ["push", "issues"]:
+                url = f"https://api.github.com/repos/{org}/{repo['name']}/events"
+                try:
+                    resp = requests.get(url, headers=headers)
+                    if resp.status_code == 200:
+                        events = resp.json()
+                        for event in events:
+                            if event['type'].lower() == event_type:
+                                created = datetime.strptime(event['created_at'], '%Y-%m-%dT%H:%M:%SZ').date()
+                                if created in daily_counts:
+                                    daily_counts[created] += 1
+                except:
+                    pass
+        
+        # Строим график
+        dates = sorted(daily_counts.keys())
+        values = [daily_counts[d] for d in dates]
+        
+        plt.figure(figsize=(12, 4))
+        plt.plot(dates, values, marker='o', color='#8A2BE2', linewidth=2, markersize=4)
+        plt.fill_between(dates, values, alpha=0.3, color='#8A2BE2')
+        plt.xticks(rotation=45, ha='right')
+        plt.grid(True, alpha=0.3, linestyle='--')
+        plt.title(f'Активность организации {org} за последние 30 дней', color='#c9d1d9')
+        plt.xlabel('Дата')
+        plt.ylabel('Количество событий')
+        plt.tight_layout()
+        plt.savefig('activity-graph.svg', facecolor='#0d1117', edgecolor='none')
+        print("График сохранён как activity-graph.svg")
+        EOF
+        
+    - name: Commit and push graph
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add activity-graph.svg
+        git diff --quiet && git diff --staged --quiet || git commit -m "Обновление графика активности организации"
+        git push
