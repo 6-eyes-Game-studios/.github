@@ -13,7 +13,6 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          # ВАЖНО: указываем логин организации
           user: 6-eyes-game-studios
           base: "activity"
           plugin_activity: yes
